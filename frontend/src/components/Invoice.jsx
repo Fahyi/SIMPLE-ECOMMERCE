@@ -64,37 +64,34 @@ export const Invoice = ({
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    onChange={informationChange}
-                    placeholder="Username"
-                  />
-                  <input
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    type="text"
-                    onChange={informationChange}
-                    placeholder="Phone Number"
-                  />
+                <div className="relative p-6 flex-auto m-y">
+                  <div className="">
+                    <input
+                      className="my-2"
+                      id="username"
+                      name="username"
+                      type="text"
+                      onChange={informationChange}
+                      placeholder="Username"
+                    />
+                    <input
+                      className="mb-5"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      type="text"
+                      onChange={informationChange}
+                      placeholder="Phone Number"
+                    />
+                  </div>
                   <p>Produk:</p>
-                  <table>
-                    <tr>
-                      <th>Name</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                    </tr>
-                    {cart.map((a) => (
-                      <tr>
-                        <td>{a.name}</td>
-                        <td>Rp.{a.price}</td>
-                        <td>{a.quantity} x</td>
-                      </tr>
-                    ))}
-                  </table>
-                  Total: {totalPrice}
+                  {cart.map((a) => (
+                    <ul className="flex justify-around">
+                      <li>{a.name}</li>
+                      <li>Rp{a.price}</li>
+                      <li>{a.quantity}x</li>
+                    </ul>
+                  ))}
+                  <p className=" my-5">Total: {totalPrice}</p>
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">

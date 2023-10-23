@@ -30,22 +30,22 @@ const CartNotif = ({ cart, setShowModal }) => {
             <AiOutlineShoppingCart size={30} />
           </i>
           {isCartOpen && (
-            <div className="absolute right-0 w-64 bg-white shadow-lg p-4 mt-2">
+            <div className="absolute w-64 bg-white shadow-lg p-4 mt-2 rounded-lg">
               <h2 className="text-lg font-semibold mb-2">Shopping Cart</h2>
               <ul className="divide-y divide-gray-200">
                 {cart.length > 0 &&
                   cart.map((a) => {
                     return (
-                      <div className="grid gap-4 grid-cols-2" key={a.id}>
+                      <div className="grid gap-4 grid-cols-3 m-3" key={a.id}>
                         <ul>{a.name}</ul>
                         <ul>Rp.{a.price}</ul>
-                        <ul>{a.quantity}</ul>
+                        <ul>{a.quantity}x</ul>
                       </div>
                     );
                   })}
               </ul>
               <button
-                className="bg-pink-500 hover:bg-pink-700 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className="mt-5 bg-pink-500 hover:bg-pink-700 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 onClick={productDetail}
               >
